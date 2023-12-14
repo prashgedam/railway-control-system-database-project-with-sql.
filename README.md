@@ -50,14 +50,16 @@ The actual implementation of the system involves writing SQL queries for CRUD op
 
 While providing specific source code within this platform isn't feasible due to constraints, a basic example might include SQL scripts for creating tables:
 
-```sql
+-- Table for Trains
 CREATE TABLE Trains (
     TrainID INT PRIMARY KEY,
     TrainName VARCHAR(50),
     Capacity INT,
+    Type VARCHAR(50),
     -- Other relevant fields
 );
 
+-- Table for Stations
 CREATE TABLE Stations (
     StationID INT PRIMARY KEY,
     StationName VARCHAR(50),
@@ -65,8 +67,55 @@ CREATE TABLE Stations (
     -- Other relevant fields
 );
 
--- Additional tables for Routes, Schedules, Tickets, Passengers, etc.
-```
+-- Table for Routes
+CREATE TABLE Routes (
+    RouteID INT PRIMARY KEY,
+    SourceStationID INT,
+    DestinationStationID INT,
+    Distance DECIMAL(10, 2),
+    Duration TIME,
+    FOREIGN KEY (SourceStationID) REFERENCES Stations(StationID),
+    FOREIGN KEY (DestinationStationID) REFERENCES Stations(StationID)
+    -- Other relevant fields
+);
+
+-- Table for Schedules
+CREATE TABLE Schedules (
+    ScheduleID INT PRIMARY KEY,
+    TrainID INT,
+    StationID INT,
+    DepartureTime DATETIME,
+    ArrivalTime DATETIME,
+    FOREIGN KEY (TrainID) REFERENCES Trains(TrainID),
+    FOREIGN KEY (StationID) REFERENCES Stations(StationID)
+    -- Other relevant fields
+);
+
+-- Table for Tickets
+CREATE TABLE Tickets (
+    TicketID INT PRIMARY KEY,
+    PassengerID INT,
+    TrainID INT,
+    DepartureStationID INT,
+    DestinationStationID INT,
+    Fare DECIMAL(10, 2),
+    SeatNumber VARCHAR(10),
+    FOREIGN KEY (PassengerID) REFERENCES Passengers(PassengerID),
+    FOREIGN KEY (TrainID) REFERENCES Trains(TrainID),
+    FOREIGN KEY (DepartureStationID) REFERENCES Stations(StationID),
+    FOREIGN KEY (DestinationStationID) REFERENCES Stations(StationID)
+    -- Other relevant fields
+);
+
+-- Table for Passengers
+CREATE TABLE Passengers (
+    PassengerID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    ContactInfo VARCHAR(100),
+    -- Other relevant fields
+);
+
 
 Each table's structure and relationships would be defined according to the project requirements, and SQL queries would handle data manipulation and retrieval.
 
