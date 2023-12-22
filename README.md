@@ -1,6 +1,6 @@
 
 ### Railway Control System Database (SQL Project)
-Designing a Railway Control System database involves creating a structure to manage various aspects of railway operations, such as train schedules, routes, stations, ticketing, and passenger information. Here's a conceptual breakdown of the project:
+Designing a Railway Control System database involves creating a structure to manage various aspects of railway operations, such as train schedules, routes, stations, ticketing, & passenger information. Here's a conceptual breakdown of the project:
 
 ### Railway Control System Database Structure:
 
