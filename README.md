@@ -6,7 +6,7 @@ Designing a Railway Control System database involves creating a structure to man
 #### 1. **Entities and Relationships:**
    - **Trains:** Details about each train (TrainID, TrainName, Capacity, Type, etc.).
    - **Stations:** Information regarding various stations (StationID, StationName, Location, etc.).
-   - **Routes:** Define routes connecting different stations (RouteID, SourceStationID, DestinationStationID, Distance, Duration, etc.).
+   - **Routes:** Define routes connecting different stations (RouteID, SourceStationID, DestinationStationID, Distance, Duration etc.).
    - **Schedules:** Timings and schedules for trains departing and arriving at stations (ScheduleID, TrainID, StationID, DepartureTime, ArrivalTime, etc.).
    - **Tickets:** Records of ticket sales (TicketID, PassengerID, TrainID, DepartureStationID, DestinationStationID, Fare, SeatNumber, etc.).
    - **Passengers:** Details of passengers (PassengerID, Name, Age, ContactInfo, etc.).
