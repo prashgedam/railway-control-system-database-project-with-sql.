@@ -15,7 +15,7 @@ Designing a Railway Control System database involves creating a structure to man
 
 1. **Train Management:**
    - Addition, deletion, and modification of train details.
-   - Assigning schedules and routes to trains.
+   - Assigning schedules & routes to trains.
 
 2. **Station Management:**
    - Adding new stations and updating station information.
